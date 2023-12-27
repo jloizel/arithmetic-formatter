@@ -47,21 +47,23 @@ def arithmetic_arranger(problems, solver = False):
         # Align the result to the length of the longest number
         result = str(sum).rjust(length)
       
+        # Create a line of '-' to separate the bottom number and the result of the sum
         line= ""
         for i in range(length):
             line += "-"
-
+        # Add spaces between each line and the next problem
         if problem != problems[-1]:
             first += top + "    "
             second += bot + "    "
             sumLine += line + "    "
             sumx += result + "    "
+        # Last problem does not need spaces
         else:
             first += top
             second += bot
             sumLine += line
             sumx += result
-
+    # Format the problem based on the value of the 'solver' parameter
     if solver:
         arranged_problems = first + "\n" + second + "\n" + sumLine + "\n" + sumx
     else:
